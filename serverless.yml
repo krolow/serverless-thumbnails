@@ -1,0 +1,29 @@
+service: thumbnail
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  region: ${env:AWS_REGION}
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - "s3:*"
+      Resource: "*"
+  environment:
+    SOURCE_BUCKET: ${env:SOURCE_BUCKET}
+    SIZES: ${env:SIZES}
+    DESTINATION_BUCKET: ${env:DESTINATION_BUCKET}
+
+functions:
+  thumbnails:
+    handler: index.handler
+    events:
+      - s3:
+          bucket: ${env:SOURCE_BUCKET}
+          event: s3:ObjectCreated:*
+resources:
+  Resources:
+    DestImageBucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: ${env:DESTINATION_BUCKET}
