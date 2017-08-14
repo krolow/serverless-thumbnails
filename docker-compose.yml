@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+  thumbnails:
+    build:
+      context: ./.docker
+      dockerfile: Dockerfile
+    container_name: serverless
+    command: yarn install
+    volumes:
+      - ./:/usr/src/app
