@@ -21,7 +21,7 @@
 
 ## License
 
-Licensed under <a href="http://krolow.mit-license.org/">The MIT License</a>
+Licensed under <a href="http://krolow.mit-license.org/">The MIT License</a><br />
 Redistributions of files must retain the above copyright notice.
 
 ## Author
