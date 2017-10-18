@@ -3,7 +3,7 @@
 > Resize images added to a s3 bucket automatically ✨
 
 
-### Environemnt Configuration
+### Environment Configuration
 
 - `SOURCE_BUCKET=%source%` where you upload the images
 - `DESTINATION_BUCKET=%destination%` where the thumbnails are going to be created
